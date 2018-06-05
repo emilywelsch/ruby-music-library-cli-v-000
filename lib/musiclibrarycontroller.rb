@@ -57,8 +57,8 @@ class MusicLibraryController
     input = gets.strip.to_i
     if Song.all.size <= input
       song = Song.all.sort{|a, b| a.name <=> b.name}[input-1]
-      puts "Playing #{song.name} by #{song.artist.name}" if song
     end
+    puts "Playing #{song.name} by #{song.artist.name}" if song
   end
 
   def list_songs_by_artist
