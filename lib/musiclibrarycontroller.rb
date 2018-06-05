@@ -62,12 +62,15 @@ class MusicLibraryController
   end
 
   def list_songs_by_artist
-    puts "gimme your input"
+    puts "gimme an artist"
     input = ""
     input = gets.strip
   end
 
   def list_songs_by_genre
+    puts "gimme a genre"
+    input = ""
+    input = gets.strip
   end
 
 end
