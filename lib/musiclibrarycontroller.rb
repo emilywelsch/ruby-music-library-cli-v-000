@@ -59,14 +59,6 @@ class MusicLibraryController
     input = gets.strip
   end
 
-  def list_artist
-    list_songs_by_artist
-  end
-
-  def list_genre
-    list_songs_by_genre
-  end
-
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
     input = gets.strip
@@ -78,9 +70,10 @@ class MusicLibraryController
   end
 
   def list_songs_by_genre
-    puts "gimme a genre"
-    input = ""
+    puts "Please enter the name of a genre:"
     input = gets.strip
+    if genre = exists
+      genre.all
   end
 
 end
