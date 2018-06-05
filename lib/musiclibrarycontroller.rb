@@ -42,7 +42,7 @@ class MusicLibraryController
 
   def list_artists # prints all artists in the music library in a numbered list (alphabetized by artist name)
     Artist.all.sort{|a, b| a.name <=> b.name}.each.with_index do |artist, index|
-      puts "#{index}. #{artist.name}"
+      puts "#{index+1}. #{artist.name}"
     end
   end
 
