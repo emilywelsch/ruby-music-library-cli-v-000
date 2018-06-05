@@ -40,7 +40,9 @@ class MusicLibraryController
     end
   end
 
-  def list_artists # list_songs prints all songs in the music library in a numbered list (alphabetized by song name)
+  def list_artists # prints all artists in the music library in a numbered list (alphabetized by artist name)
+    Artist.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |artist, index|
+      puts "#{index}. #{song.artist.name}"
   end
 
   def list_genres
