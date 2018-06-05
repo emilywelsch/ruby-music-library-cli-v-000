@@ -1,4 +1,5 @@
 class Song
+  extend Concerns::Findable
   attr_accessor :name
   @@all = []
 
@@ -19,9 +20,10 @@ class Song
     @@all.clear
   end
 
-  def create #instantiates an instance using .new but
-    #also invokes #save on that instance,
-    #forcing it to persist immediately.
+  def self.create(name)
+    song = new(name)
+    song.save
+    song
   end
 
 end
