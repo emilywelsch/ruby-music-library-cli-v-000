@@ -18,9 +18,10 @@ class Genre
     @@all.clear
   end
 
-  def create #instantiates an instance using .new but
-    #also invokes #save on that instance,
-    #forcing it to persist immediately.
+  def self.create(name)
+    genre = new(name)
+    genre.save
+    genre
   end
 
 end
