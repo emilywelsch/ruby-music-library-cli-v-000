@@ -1,15 +1,18 @@
 class Song
   extend Concerns::Findable
   attr_accessor :name
+  attr_reader :artist, :genre
   @@all = []
 
   def self.all
     @@all
   end
 
-  def initialize(name)
+  def initialize(name, artist = nil, genre = nil)
     @name = name
-    save
+    self.artist = artist if artist
+    self.genre = genre if genre
+    #save
   end
 
   def save
