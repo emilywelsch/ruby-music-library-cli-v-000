@@ -15,6 +15,16 @@ class Song
     #save
   end
 
+  def artist=(artist)
+    @artist = artist
+    artist.add_song(self)
+  end
+
+  def genre=(genre)
+    @genre = genre
+    genre.sounds << self unless genre.songs.include?(self)    
+  end
+
   def save
     @@all << self
   end
