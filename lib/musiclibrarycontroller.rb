@@ -74,6 +74,7 @@ class MusicLibraryController
       artist.songs.sort{|a,b| a.name <=> b.name}.each.with_index(1) do |song, index|
         puts "#{index}. #{song.name} - #{song.genre.name}"
       end
+    end
   end
 
   def list_songs_by_genre
