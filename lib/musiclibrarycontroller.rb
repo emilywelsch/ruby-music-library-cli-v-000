@@ -34,25 +34,25 @@ class MusicLibraryController
     end
   end
 
-  def list_songs # prints all songs in the music library in a numbered list (alphabetized by song name)
+  def list_songs
     Song.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |song, index|
       puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
   end
 
-  def list_artists # prints all artists in the music library in a numbered list (alphabetized by artist name)
+  def list_artists
     Artist.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |artist, index|
       puts "#{index}. #{artist.name}"
     end
   end
 
-  def list_genres # prints all genres in the music library in a numbered list (alphabetized by genre name)
+  def list_genres
     Genre.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |genre, index|
       puts "#{index}. #{genre.name}"
     end
   end
 
-  # def play_song # upon receiving valid input 'plays' the matching song from the alphabetized list output by #list_songs
+  # def play_song
   #   puts "Which song number would you like to play?"
   #   input = gets.strip.to_i
   #   if Song.all.size <= input && input != 0
