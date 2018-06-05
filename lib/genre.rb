@@ -8,8 +8,10 @@ class Genre
     @@all
   end
 
-  def initialize
-    save
+  def initialize(name)
+    @name = name
+    songs = []
+    #save
   end
 
   def save
